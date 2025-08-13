@@ -13,7 +13,7 @@ def home():
 
 @app.route('/test', methods=['GET', 'POST'])
 def test():
-    osx = New_OSX
+    osx = New_OSX()
     i = 1
     form = LossForm()
 
@@ -21,6 +21,5 @@ def test():
         return render_template('test.html', form=form, OSX=osx, i=i)
     if request.method == 'POST':
         while i <= osx.num_channel:
-
             i += 1
             return render_template('test.html', form=form, OSX=osx, i=i)

@@ -13,10 +13,10 @@ table = []
 
 
 i = 1
-while i <= num_channel:
-    new_row = [i, .4, .3, 'Pass']
-    table.append(new_row)
-    i += 1
+#while i <= num_channel:
+#    new_row = [i, .4, .3, 'Pass']
+#    table.append(new_row)
+#    i += 1
 
 df = pd.DataFrame(columns=columns, data=table)
 print(df)

@@ -21,4 +21,4 @@ class New_OSX():
             self.idn = resp.split(',')
             if self.idn[1] == 'osx' or self.idn[1] == 'OSX':
                 print('OSX Created')
-        self.num_channel=int(self.instrument.query("CFG:SWT0:END?"))
+        self.num_channel = int(self.instrument.query("CFG:SWT0:END?"))

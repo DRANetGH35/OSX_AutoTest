@@ -1,11 +1,8 @@
 import socket
 
 from app import create_app
-from OSX import New_OSX
-from main import new_row
 
 app = create_app()
-OSX = New_OSX()
 
 from routes import *
 

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.css" />
+</head>
+<style>
+
+
+
+html, body{
+    height: 100%;
+}
+body.dark-mode{
+    background-color: #121212;
+    color: #f0f0f0;
+}
+a.dark-toggle {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: underline;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+}
+.content {
+    flex: 1;  /* This will make the content area take up the available space */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+.custom-logo{
+    width: 25%;
+}
+.awesomplete mark {
+    background-color: #cce5ff;
+    color: #004085;
+    font-weight: bold;
+}
+
+.flashes{
+    color:red;
+    display: flex;
+}
+.custom-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.custom-btn{
+    margin: 10px 10px;
+    background-color:blue;
+    color: white;
+
+}
+.custom-btn:hover{
+    background-color: darkblue;
+    color: grey;
+}
+/* Container for image */
+.image_container {
+    margin-bottom: 20px; /* Space between image and form */
+    text-align: center;
+}
+
+/* Adjust form container */
+.form_container {
+    max-width: 500px; /* Limit the form width */
+    width: 100%; /* Ensure full width on small screens */
+    padding: 2rem; /* Add some padding around the form */
+}
+/* Mobile-specific tweaks */
+@media (max-width: 576px) {
+    .form_container {
+        padding: 1rem; /* Reduce padding on mobile */
+    }
+}
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+{% block content %}
+{% endblock %}
+
+</html>
+

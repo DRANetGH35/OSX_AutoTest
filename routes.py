@@ -1,4 +1,4 @@
-from flask import render_template, request
+from flask import render_template, request, redirect
 
 from app import create_app
 from forms import LossForm
@@ -11,15 +11,30 @@ app = create_app()
 def home():
     return render_template('index.html')
 
-@app.route('/test', methods=['GET', 'POST'])
-def test():
+@app.route('/connect')
+def connect_osx():
+    global osx
+    global table
+    table = []
     osx = New_OSX()
-    i = 1
-    form = LossForm()
+    return redirect('/test/ch1')
 
+@app.route('/test/ch<int:ch>', methods=['GET', 'POST'])
+def test(ch):
+    form = LossForm()
     if request.method == 'GET':
-        return render_template('test.html', form=form, OSX=osx, i=i)
+        return render_template('test.html', form=form, OSX=osx, ch=ch)
     if request.method == 'POST':
-        while i <= osx.num_channel:
-            i += 1
-            return render_template('test.html', form=form, OSX=osx, i=i)
+        wave_a_loss = float(request.form.get('wave_a_loss'))
+        wave_b_loss = float(request.form.get('wave_b_loss'))
+        if wave_a_loss < .8 and wave_b_loss < .8:
+            pass_state = "Pass"
+        else:
+            pass_state = "Fail"
+        new_row = [ch, wave_a_loss, wave_b_loss, pass_state]
+        table.append(new_row)
+        ch += 1
+        while ch <= osx.num_channel:
+            return redirect(f'/test/ch{ch}')
+        return 'success'
+        print(table)
